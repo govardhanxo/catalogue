@@ -21,14 +21,9 @@ pipeline {
         stage('Read Package.json Version') {
             steps {
                 script {
-                    // Read the package.json file
                     def packageJson = readJSON file: 'package.json'
-
-                    // Access a specific field, e.g., 'version'
                     appVersion = packageJson.version
-
-                    // Print the version
-                    echo "Package version: ${version}"
+                    echo "Package version: ${appVersion}"
                 }
             }
         }
